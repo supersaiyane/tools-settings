@@ -1,0 +1,34 @@
+____________________________________________________________________________________________________________
+Powershell settings
+
+Installation
+
+Install-Module posh-git -Scope CurrentUser
+Install-Module oh-my-posh -Scope CurrentUser
+Install-Module -Name PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
+
+Install-Module -Name Figlet
+npm install -g figlet
+
+
+Fonts (nerd-fonts)
+JetBrainsMono NF
+
+
+
+
+notepad $profile 
+ ------
+-----
+New-Alias -Name git -Value "$Env:ProgramFiles\Git\bin\git.exe" (git.exe path needs to be set)
+Import-Module posh-git
+Import-Module oh-my-posh
+Import-Module -Name Terminal-Icons
+Set-Theme paradox
+figlet "Hello Master Monk"
+
+//to support Vi
+function vi ($File){
+$File = $File -replace "\\", "/" -replace " ", "\ "
+bash -c "vi $File"
+}
