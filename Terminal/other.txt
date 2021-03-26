@@ -1,7 +1,9 @@
 ____________________________________________________________________________________________________________
 Powershell settings
 
-Installation
+Install powershell from 
+
+Installation https://github.com/powershell/powershell#get-powershell
 
 Install-Module posh-git -Scope CurrentUser
 Install-Module oh-my-posh -Scope CurrentUser
@@ -9,6 +11,8 @@ Install-Module -Name PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
 
 Install-Module -Name Figlet
 npm install -g figlet
+
+Import-WslCommand
 
 
 Fonts (nerd-fonts)
@@ -27,8 +31,4 @@ Import-Module -Name Terminal-Icons
 Set-Theme paradox
 figlet "Hello Master Monk"
 
-//to support Vi
-function vi ($File){
-$File = $File -replace "\\", "/" -replace " ", "\ "
-bash -c "vi $File"
-}
+Import-WslCommand "apt", "awk", "emacs", "grep", "head", "less", "ls", "man", "sed", "seq", "ssh", "sudo", "tail", "vim"
